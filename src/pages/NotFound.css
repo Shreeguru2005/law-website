@@ -1,0 +1,67 @@
+/* ============================================
+   LegalPro - 404 Page Styles
+   ============================================ */
+
+.not-found-section {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, var(--color-background-light), var(--color-background));
+  padding: var(--navbar-height) 0;
+}
+
+.not-found-content {
+  text-align: center;
+  max-width: 560px;
+  padding: var(--space-2xl);
+}
+
+.not-found-icon {
+  font-size: 5rem;
+  margin-bottom: var(--space-md);
+  opacity: 0.15;
+}
+
+.not-found-code {
+  font-family: var(--font-heading);
+  font-size: 8rem;
+  font-weight: 800;
+  color: var(--color-secondary);
+  line-height: 1;
+  margin-bottom: var(--space-md);
+}
+
+.not-found-title {
+  font-size: var(--text-3xl);
+  color: var(--color-primary);
+  margin-bottom: var(--space-lg);
+}
+
+.not-found-text {
+  font-size: var(--text-base);
+  color: var(--color-text-light);
+  line-height: 1.7;
+  margin-bottom: var(--space-2xl);
+}
+
+.not-found-actions {
+  display: flex;
+  gap: var(--space-lg);
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 480px) {
+  .not-found-code {
+    font-size: 6rem;
+  }
+
+  .not-found-actions {
+    flex-direction: column;
+  }
+
+  .not-found-actions .btn {
+    width: 100%;
+  }
+}

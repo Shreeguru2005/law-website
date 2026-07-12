@@ -1,0 +1,147 @@
+/* ============================================
+   LegalPro - Experience Timeline Styles
+   ============================================ */
+
+.experience {
+  background: var(--color-background);
+}
+
+.timeline {
+  position: relative;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: var(--space-xl) 0;
+}
+
+.timeline-line {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: linear-gradient(to bottom, var(--color-secondary), var(--color-border));
+  transform: translateX(-50%);
+}
+
+.timeline-item {
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin-bottom: var(--space-3xl);
+}
+
+.timeline-item:last-child {
+  margin-bottom: 0;
+}
+
+/* Left / Right alternating */
+.timeline-left {
+  flex-direction: row;
+  padding-right: calc(50% + 40px);
+}
+
+.timeline-right {
+  flex-direction: row-reverse;
+  padding-left: calc(50% + 40px);
+}
+
+.timeline-left .timeline-content {
+  text-align: right;
+}
+
+.timeline-right .timeline-content {
+  text-align: left;
+}
+
+/* Timeline dot */
+.timeline-dot {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--color-primary);
+  color: var(--color-secondary);
+  border-radius: var(--radius-full);
+  font-size: 1.1rem;
+  z-index: 2;
+  box-shadow: 0 0 0 4px var(--color-background), 0 0 0 6px var(--color-secondary);
+  transition: all var(--transition-base);
+}
+
+.timeline-item:hover .timeline-dot {
+  background: var(--color-secondary);
+  color: var(--color-primary);
+  transform: translateX(-50%) scale(1.1);
+}
+
+/* Content */
+.timeline-content {
+  padding: var(--space-xl);
+  background: var(--color-background-light);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--color-border);
+  transition: all var(--transition-base);
+  flex: 1;
+}
+
+.timeline-content:hover {
+  box-shadow: var(--shadow-lg);
+  border-color: var(--color-secondary);
+}
+
+.timeline-year {
+  display: inline-block;
+  font-family: var(--font-heading);
+  font-size: var(--text-sm);
+  font-weight: 700;
+  color: var(--color-secondary);
+  padding: 4px 14px;
+  background: rgba(201, 162, 39, 0.1);
+  border-radius: var(--radius-full);
+  margin-bottom: var(--space-sm);
+}
+
+.timeline-title {
+  font-family: var(--font-heading);
+  font-size: var(--text-lg);
+  color: var(--color-primary);
+  margin-bottom: var(--space-sm);
+}
+
+.timeline-description {
+  font-size: var(--text-sm);
+  color: var(--color-text-light);
+  line-height: 1.6;
+}
+
+/* ============================================
+   Responsive
+   ============================================ */
+@media (max-width: 768px) {
+  .timeline-line {
+    left: 24px;
+  }
+
+  .timeline-left,
+  .timeline-right {
+    flex-direction: row;
+    padding-right: 0;
+    padding-left: 64px;
+  }
+
+  .timeline-left .timeline-content,
+  .timeline-right .timeline-content {
+    text-align: left;
+  }
+
+  .timeline-dot {
+    left: 24px;
+    width: 40px;
+    height: 40px;
+    font-size: 0.9rem;
+  }
+}

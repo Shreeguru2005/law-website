@@ -1,0 +1,124 @@
+/* ============================================
+   LegalPro - Practice Areas Styles
+   ============================================ */
+
+.practice-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: var(--space-xl);
+}
+
+.practice-card {
+  position: relative;
+  background: var(--color-background);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  transition: all var(--transition-base);
+  border: 1px solid var(--color-border);
+}
+
+.practice-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-xl);
+}
+
+.practice-card:hover .practice-card-border {
+  transform: scaleX(1);
+}
+
+.practice-card:hover .practice-icon-wrapper {
+  background: linear-gradient(135deg, var(--color-secondary), var(--color-secondary-light));
+  color: var(--color-primary);
+}
+
+.practice-card-inner {
+  padding: var(--space-2xl);
+}
+
+/* Gold accent border at bottom */
+.practice-card-border {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--color-secondary), var(--color-secondary-light));
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform var(--transition-base);
+}
+
+.practice-icon-wrapper {
+  width: 64px;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(201, 162, 39, 0.1);
+  border-radius: var(--radius-lg);
+  color: var(--color-secondary);
+  font-size: 1.5rem;
+  margin-bottom: var(--space-lg);
+  transition: all var(--transition-base);
+}
+
+.practice-title {
+  font-family: var(--font-heading);
+  font-size: var(--text-xl);
+  color: var(--color-primary);
+  margin-bottom: var(--space-md);
+}
+
+.practice-description {
+  font-size: var(--text-sm);
+  color: var(--color-text-light);
+  line-height: 1.7;
+  margin-bottom: var(--space-lg);
+}
+
+.practice-details {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-sm);
+  margin-bottom: var(--space-lg);
+}
+
+.practice-details li {
+  font-size: var(--text-xs);
+  padding: 4px 12px;
+  background: var(--color-background-light);
+  border-radius: var(--radius-full);
+  color: var(--color-text-light);
+  border: 1px solid var(--color-border);
+}
+
+.practice-link {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-sm);
+  font-size: var(--text-sm);
+  font-weight: 600;
+  color: var(--color-secondary);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  background: none;
+  border: none;
+  padding: 0;
+}
+
+.practice-link:hover {
+  gap: var(--space-md);
+  color: var(--color-secondary-dark);
+}
+
+/* ============================================
+   Responsive
+   ============================================ */
+@media (max-width: 768px) {
+  .practice-grid {
+    grid-template-columns: 1fr;
+    max-width: 480px;
+    margin: 0 auto;
+  }
+}

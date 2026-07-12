@@ -1,0 +1,147 @@
+/* ============================================
+   LegalPro - Process / Consultation Steps Styles
+   ============================================ */
+
+.process {
+  background: var(--color-background-light);
+}
+
+/* Timeline Wrapper */
+.process-timeline {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  gap: var(--space-md);
+  align-items: flex-start;
+  padding-top: var(--space-xl);
+}
+
+/* Horizontal connecting line */
+.process-line {
+  position: absolute;
+  top: calc(var(--space-xl) + 36px); /* vertically center on icons */
+  left: calc(10% + 36px);
+  right: calc(10% + 36px);
+  height: 2px;
+  background: linear-gradient(90deg, var(--color-secondary), rgba(201, 162, 39, 0.2));
+  z-index: 0;
+}
+
+/* Individual step */
+.process-step {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+
+/* Icon node */
+.process-node {
+  position: relative;
+  margin-bottom: var(--space-xl);
+}
+
+.process-icon-wrapper {
+  width: 72px;
+  height: 72px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--color-primary);
+  border-radius: var(--radius-full);
+  border: 3px solid var(--color-secondary);
+  color: var(--color-secondary);
+  font-size: 1.5rem;
+  transition: all var(--transition-base);
+  box-shadow: 0 0 0 6px var(--color-background-light);
+}
+
+.process-step:hover .process-icon-wrapper {
+  background: var(--color-secondary);
+  color: var(--color-primary);
+  transform: scale(1.1);
+}
+
+.process-number {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--color-secondary);
+  color: var(--color-primary);
+  border-radius: var(--radius-full);
+  font-size: 0.65rem;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+}
+
+/* Content */
+.process-content {
+  max-width: 180px;
+}
+
+.process-title {
+  font-family: var(--font-heading);
+  font-size: var(--text-base);
+  color: var(--color-primary);
+  margin-bottom: var(--space-sm);
+}
+
+.process-description {
+  font-size: var(--text-xs);
+  color: var(--color-text-light);
+  line-height: 1.6;
+}
+
+/* ============================================
+   Responsive
+   ============================================ */
+@media (max-width: 900px) {
+  .process-timeline {
+    flex-direction: column;
+    align-items: flex-start;
+    padding-top: 0;
+    gap: 0;
+  }
+
+  .process-line {
+    display: none;
+  }
+
+  .process-step {
+    flex-direction: row;
+    text-align: left;
+    align-items: flex-start;
+    gap: var(--space-xl);
+    padding: var(--space-lg) 0;
+    border-bottom: 1px solid var(--color-border-light);
+  }
+
+  .process-step:last-child {
+    border-bottom: none;
+  }
+
+  .process-node {
+    flex-shrink: 0;
+    margin-bottom: 0;
+  }
+
+  .process-content {
+    max-width: 100%;
+  }
+
+  .process-title {
+    font-size: var(--text-lg);
+  }
+
+  .process-description {
+    font-size: var(--text-sm);
+  }
+}
